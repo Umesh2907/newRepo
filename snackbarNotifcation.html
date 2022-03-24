@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>23-03-2022</title>
+</head>
+
+<body>
+</body>
+<script>
+  function addBtn() {    
+    //creating button using createElement method.
+    const btn = document.createElement("button");
+    btn.textContent = 'Click me!';
+
+    //assigning id to created element. 
+    btn.id = "btn";
+    
+    //assigning class to created element(here it is optional). 
+    btn.className = "add-className";
+
+    document.body.appendChild(btn);
+
+    // document.getElementById("btn").addEventListener("click", function hello() {
+    //   console.log('Hello World!')
+    // });
+
+
+    //js-code for Snackbar popup after click on selected element.
+    const button = document.querySelector("#btn").addEventListener("click", function popToast() {
+      const toast = document.createElement("toast");
+
+      toast.innerHTML = "I love Snackbar...!"
+
+      toast.style.width = "150px";
+
+      toast.style.backgroundColor = "black";
+
+      toast.style.color = "white";
+
+      toast.style.textAlign = "center";
+
+      toast.style.zIndex = "1";
+
+      toast.style.borderRadius = "4px";
+
+      toast.style.padding = "16px";
+
+      toast.style.position = "fixed";
+
+      toast.style.bottom = "30px";
+
+      toast.style.left = "10px";
+
+      toast.style.fontSize = "18px";
+
+      toast.style.boxShadow = "0 5px 10px 0 rgba(0, 0, 0, 0.5)"
+
+      document.body.appendChild(toast);
+
+      //after 3 seconds of timeout the Snackbar will disappear. 
+      setTimeout(() => {
+        toast.style.display = "none";
+      }, 3000);
+    });
+  }
+  addBtn()
+
+</script>
+
+</html>
